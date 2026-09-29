@@ -17,17 +17,19 @@ h1{font-size:clamp(48px,7vw,82px);line-height:1.02;letter-spacing:-2px}
 .section{padding:95px 0}.section h2{font-size:clamp(34px,4vw,52px);line-height:1.1;margin-bottom:38px;letter-spacing:-1px}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{padding:30px;border:1px solid #e2e5e7;background:#fff;box-shadow:0 10px 30px #00000009}.icon{font-size:34px;color:#c7a45b;margin-bottom:18px}.card h3{font-size:21px;margin-bottom:10px}
 .portfolio{background:#11171b;color:#fff}.portfolio h2{color:#fff}.intro{color:#c8d0d4;max-width:700px;margin-top:-20px;margin-bottom:35px}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+/* Galerie des 13 réalisations : grille régulière et entièrement responsive */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:stretch}
 .gallery-item{position:relative;overflow:hidden;background:#1e272d;border:1px solid #2c373d;border-radius:8px;min-width:0;box-shadow:0 14px 35px #0000002b;transition:transform .25s ease,box-shadow .25s ease}
 .gallery-item:hover{transform:translateY(-4px);box-shadow:0 18px 42px #00000045}
-.gallery-item img{width:100%;height:320px;display:block;object-fit:cover;object-position:center;transition:transform .55s ease,filter .35s ease;background:#202a30}
+.gallery-item img{width:100%;aspect-ratio:4/3;height:auto;display:block;object-fit:cover;object-position:center;background:#202a30;transition:transform .55s ease,filter .35s ease}
 .gallery-item:hover img{transform:scale(1.045);filter:brightness(1.04)}
-.gallery-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:55px 18px 16px;color:#fff;font-weight:700;font-size:15px;line-height:1.35;background:linear-gradient(transparent,#000d)}
-.gallery-item::after{content:"Voir la réalisation";position:absolute;top:14px;right:14px;padding:6px 10px;border-radius:20px;background:#c7a45b;color:#0d1114;font-size:11px;font-weight:800;opacity:0;transform:translateY(-4px);transition:.25s;pointer-events:none}
+.gallery-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:55px 14px 14px;color:#fff;font-weight:700;font-size:14px;line-height:1.35;background:linear-gradient(transparent,#000d);text-shadow:0 1px 2px #000}
+.gallery-item::after{content:"Voir la réalisation";position:absolute;top:12px;right:12px;padding:6px 10px;border-radius:20px;background:#c7a45b;color:#0d1114;font-size:11px;font-weight:800;opacity:0;transform:translateY(-4px);transition:.25s;pointer-events:none}
 .gallery-item:hover::after{opacity:1;transform:translateY(0)}
 .about{background:#f6f6f4}.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px}.about p{margin-bottom:18px;font-size:17px}
 .contact{background:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}.contact-box{margin-top:30px;border-left:3px solid #c7a45b;padding-left:20px}.contact-box p{margin:0 0 18px}.contact a{color:#182026}
 form{display:flex;flex-direction:column;gap:14px}input,textarea{font:inherit;padding:15px;border:1px solid #ccd1d4;border-radius:3px;background:#fafafa}textarea{resize:vertical}form .btn{align-self:flex-start}
 footer{background:#0b1013;color:#aeb7bb;padding:25px 0}.footer{display:flex;justify-content:space-between;gap:20px;font-size:14px}.footer strong{color:#fff}
-@media(max-width:850px){nav{display:none;position:absolute;top:76px;left:0;right:0;background:#0d1114;padding:20px;flex-direction:column;gap:15px}.menu{display:block}nav.open{display:flex}.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.gallery-item img{height:300px}}
-@media(max-width:520px){.cards,.gallery{grid-template-columns:1fr}.gallery-item img{height:280px}.section{padding:65px 0}.footer{flex-direction:column}h1{letter-spacing:-1px}}
+@media(max-width:1000px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:850px){nav{display:none;position:absolute;top:76px;left:0;right:0;background:#0d1114;padding:20px;flex-direction:column;gap:15px}.menu{display:block}nav.open{display:flex}.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}}
+@media(max-width:520px){.cards,.gallery{grid-template-columns:1fr}.gallery-item img{aspect-ratio:4/3}.section{padding:65px 0}.footer{flex-direction:column}h1{letter-spacing:-1px}.container{width:min(94%,560px)}}
