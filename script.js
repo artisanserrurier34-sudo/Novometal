@@ -47,6 +47,7 @@ if(galleryItems.length){
     const link=item.querySelector('.photo-link');
     if(!img)return;
     modalImg.src=(link&&link.href)||img.src;
+    modalImg.removeAttribute("style");
     modalImg.alt=img.alt;
     title.textContent=img.alt;
     zoom=1;
